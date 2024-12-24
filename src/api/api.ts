@@ -12,7 +12,7 @@ export const createTransaction = async (
   setWalletBalance: SetWalletBalance
 ) => {
   try {
-    const response = await fetch("http://localhost:3000/api/create-transaction", {
+    const response = await fetch("http://localhost:3000/api/transactions/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -34,7 +34,7 @@ export const createTransaction = async (
     const signedTx = await signWalletTransaction(wallet as EnabledWallet, unsignedTx);
 
     // Submit the signed transaction
-    const submitResponse = await fetch("http://localhost:3000/api/submit-transaction", {
+    const submitResponse = await fetch("http://localhost:3000/api/transactions/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -62,7 +62,7 @@ export const fetchAndDecodeUtxos = async (wallet: WalletApi): Promise<DecodedUtx
     const rawUtxos = await wallet.getUtxos();
     console.log("rawutxos", rawUtxos);
 
-    const response = await fetch("http://localhost:3000/api/decode-utxos", {
+    const response = await fetch("http://localhost:3000/api/transactions/decode-utxos", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ utxos: rawUtxos }),
