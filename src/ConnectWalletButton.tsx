@@ -1,10 +1,32 @@
-import React from 'react';
 import { ConnectWallet } from '@newm.io/cardano-dapp-wallet-connector';
 
-const ConnectWalletButton: React.FC = () => (
-  <div className="mt-4">
-    <ConnectWallet isInverted={false} />
-  </div>
-);
+interface ConnectWalletButtonProps {
+  className?: string;
+  isDisabled?: boolean;
+}
+
+const ConnectWalletButton = ({ className, isDisabled }: ConnectWalletButtonProps) => {
+  return (
+    <div className={className}>
+      <ConnectWallet
+        isInverted={true}
+        mainButtonStyle={{
+          color: 'white',
+          backgroundColor: isDisabled ? '#A0AEC0' : '#4A5568',
+          border: '2px solid #CBD5E0',
+          borderRadius: '8px',
+          padding: '10px 20px',
+          fontSize: '16px',
+          fontWeight: 'bold',
+          transition: 'background-color 0.3s ease',
+          cursor: isDisabled ? 'not-allowed' : 'pointer',
+          pointerEvents: isDisabled ? 'none' : 'auto'
+        }}
+        modalStyle={{ backgroundColor: '#2d3748' }}
+        modalHeaderStyle={{ color: '#fff' }}
+      />
+    </div>
+  );
+};
 
 export default ConnectWalletButton;
