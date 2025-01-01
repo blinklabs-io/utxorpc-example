@@ -13,8 +13,10 @@
   "dependencies": {
     "@cardano-foundation/cardano-connect-with-wallet": "^0.2.9",
     "@newm.io/cardano-dapp-wallet-connector": "^1.3.3",
+    "framer-motion": "^11.15.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^7.1.1",
     "styled-components": "^6.1.13"
   },
   "devDependencies": {

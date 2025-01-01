@@ -5,6 +5,7 @@ import {
 } from "@newm.io/cardano-dapp-wallet-connector";
 import "./App.css";
 import { createTransaction, fetchAndDecodeUtxos } from "./api/api";
+import { useNavigate, useLocation } from "react-router-dom";
 
 import { DecodedUtxo, WalletApi } from "./types/wallet";
 import Header from './Header';
@@ -14,6 +15,8 @@ import ConnectWalletButton from './ConnectWalletButton';
 
 const App: FunctionComponent = () => {
   const { wallet, getAddress, getBalance } = useConnectWallet();
+  const navigate = useNavigate();
+  const location = useLocation();
   const [address, setAddress] = useState<string>();
   const [walletBalance, setWalletBalance] = useState<number>();
   const [amount, setAmount] = useState<number>();
@@ -52,6 +55,11 @@ const App: FunctionComponent = () => {
     }
   }, [wallet, getAddress, getBalance, fetchUtxos]);
 
+  useEffect(() => {
+    if (!wallet && location.pathname !== '/') {
+      navigate('/');
+    }
+  }, [wallet, navigate, location.pathname]);
 
 const handleCreateTransaction = async () => {
   if (!recipientAddress || !amount || !address || !wallet) return;
@@ -68,10 +76,21 @@ const handleCreateTransaction = async () => {
   );
 };
 
+
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
-      <div className="flex flex-col items-center justify-center min-h-screen w-full max-w-4xl mx-auto px-4 py-8 gap-8">
+    <div className="h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white flex flex-col relative">
+      <ConnectWalletButton className="absolute top-20 left-8" />
+      {wallet && (
+        <WalletInfo
+          walletName={wallet.name}
+          walletBalance={walletBalance}
+          txId={txId}
+        />
+      )}
+      <div className="flex-1 flex flex-col items-center justify-center w-full max-w-4xl mx-auto px-4 gap-6">
         <Header />
+
         <TransactionForm
           selectedAsset={selectedAsset}
           setSelectedAsset={setSelectedAsset}
@@ -82,16 +101,6 @@ const handleCreateTransaction = async () => {
           uniqueAssets={uniqueAssets}
           handleCreateTransaction={handleCreateTransaction}
         />
-
-        {wallet && (
-          <WalletInfo
-            walletName={wallet.name}
-            walletBalance={walletBalance}
-            txId={txId}
-          />
-        )}
-
-        <ConnectWalletButton />
       </div>
     </div>
   );
