@@ -55,12 +55,12 @@ jobs:
         run: |
           rm -rf /tmp/.buildx-cache
           mv /tmp/.buildx-cache-new /tmp/.buildx-cache
-      - name: tag-master
-        run: docker tag ${{ steps.meta.outputs.tags }} ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:master
-        if: github.ref == 'refs/heads/master'
-      - name: push-master
-        run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:master
-        if: github.ref == 'refs/heads/master'
+      - name: tag-main
+        run: docker tag ${{ steps.meta.outputs.tags }} ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:main
+        if: github.ref == 'refs/heads/main'
+      - name: push-main
+        run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:main
+        if: github.ref == 'refs/heads/main'
 
   github-release:
     runs-on: ubuntu-latest
