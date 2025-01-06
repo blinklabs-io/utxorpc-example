@@ -8,8 +8,10 @@ import { C } from "lucid-cardano";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({ path: path.resolve(__dirname, "../../.env") });
 
+const API_URL = process.env.UTXORPC_URL || "https://preview.utxorpc-v0.demeter.run";
+
 const provider = new U5C({
-  url: "https://preview.utxorpc-v0.demeter.run",
+  url: API_URL,
   headers: {
     "dmtr-api-key": process.env.DMTR_API_KEY,
   },
