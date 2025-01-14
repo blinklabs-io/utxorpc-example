@@ -1,7 +1,8 @@
 import { EnabledWallet, signWalletTransaction } from "@newm.io/cardano-dapp-wallet-connector";
 import { WalletApi, SetTxId, GetBalance, SetWalletBalance, DecodedUtxo } from "../types/wallet";
 
-const API_URL = process.env.VITE_API_URL || "http://localhost:3000";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
 
 export const createTransaction = async (
   recipientAddress: string,
