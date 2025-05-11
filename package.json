@@ -11,7 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@cardano-foundation/cardano-connect-with-wallet": "^0.2.9",
+    "@cardano-foundation/cardano-connect-with-wallet": "^0.2.14",
     "@newm.io/cardano-dapp-wallet-connector": "^1.5.1",
     "framer-motion": "^12.9.2",
     "react": "^18.3.1",
