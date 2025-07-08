@@ -10,7 +10,7 @@ const TransactionForm = ({
   uniqueAssets,
   handleCreateTransaction,
 }: TransactionFormProps) => (
-  <div className="w-full max-w-3xl mx-auto bg-white dark:bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700">
+  <div className="w-full max-w-3xl mx-auto bg-white dark:bg-gray-800/50 backdrop-blur-xs p-8 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700">
     <h2 className="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Transaction Form</h2>
 
     <div className="space-y-6">
@@ -24,7 +24,7 @@ const TransactionForm = ({
             <div className="flex gap-4">
               <div className="flex-1">
                 <input
-                  className="w-full bg-white dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 hover:border-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full bg-white dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 hover:border-blue-400 transition-colors focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                   type="number"
                   value={amount}
                   onChange={(e) => setAmount(Number(e.target.value))}
@@ -34,7 +34,7 @@ const TransactionForm = ({
               </div>
               <div className="w-1/3">
                 <select
-                  className="w-full bg-white dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 hover:border-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full bg-white dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 hover:border-blue-400 transition-colors focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                   value={selectedAsset}
                   onChange={(e) => setSelectedAsset(e.target.value)}
                 >
@@ -59,7 +59,7 @@ const TransactionForm = ({
             Wallet Address
           </label>
           <input
-            className="w-full bg-white dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 hover:border-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full bg-white dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 hover:border-blue-400 transition-colors focus:outline-hidden focus:ring-2 focus:ring-blue-500"
             type="text"
             value={recipientAddress}
             onChange={(e) => setRecipientAddress(e.target.value)}
@@ -71,7 +71,7 @@ const TransactionForm = ({
       {/* Submit Button Section */}
       <div className="pt-4">
         <button
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-lg font-semibold text-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-lg font-semibold text-lg transition-colors focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
           onClick={handleCreateTransaction}
           disabled={!amount || !recipientAddress}
         >
