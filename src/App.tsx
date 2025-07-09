@@ -79,7 +79,7 @@ const handleCreateTransaction = async () => {
 
 
   return (
-    <div className="h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white flex flex-col relative">
+    <div className="h-screen bg-linear-to-b from-gray-900 to-gray-800 text-white flex flex-col relative">
       <ConnectWalletButton className="absolute top-20 left-8" />
       {wallet && (
         <WalletInfo

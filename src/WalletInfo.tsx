@@ -5,7 +5,7 @@ interface WalletInfoProps {
 }
 
 const WalletInfo = ({ walletName, walletBalance, txId }: WalletInfoProps) => (
-  <nav className="bg-gray-800/50 backdrop-blur-sm h-14 border-b border-gray-700 flex items-center px-8">
+  <nav className="bg-gray-800/50 backdrop-blur-xs h-14 border-b border-gray-700 flex items-center px-8">
     <div className="flex items-center">
       <div className="w-2 h-2 rounded-full bg-green-500 mr-2" />
       <span className="text-blue-400 font-medium text-sm">

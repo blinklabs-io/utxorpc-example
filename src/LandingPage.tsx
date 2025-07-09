@@ -24,7 +24,7 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div className="h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white flex flex-col items-center justify-center">
+    <div className="h-screen bg-linear-to-b from-gray-900 to-gray-800 text-white flex flex-col items-center justify-center">
       <motion.h1
         className="text-5xl font-bold mb-8"
         initial={{ opacity: 0, y: -50 }}
