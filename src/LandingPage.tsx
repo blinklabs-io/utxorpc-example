@@ -39,7 +39,7 @@ const LandingPage = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }}
       >
-        Connect your wallet to start sending transactions
+        Connect your preview wallet to start sending transactions
       </motion.p>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
