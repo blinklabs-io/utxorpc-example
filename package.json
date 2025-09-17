@@ -20,7 +20,7 @@
     "styled-components": "^6.1.19"
   },
   "devDependencies": {
-    "@eslint/js": "^9.26.0",
+    "@eslint/js": "^9.35.0",
     "@tailwindcss/postcss": "^4.1.13",
     "@types/node": "^24.4.0",
     "@types/react": "^18.3.12",
