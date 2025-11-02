@@ -15,7 +15,7 @@
     "@newm.io/cardano-dapp-wallet-connector": "^1.5.4",
     "framer-motion": "^12.23.12",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react-dom": "^19.2.0",
     "react-router-dom": "^7.9.3",
     "styled-components": "^6.1.19"
   },
@@ -24,7 +24,7 @@
     "@tailwindcss/postcss": "^4.1.13",
     "@types/node": "^24.9.0",
     "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
+    "@types/react-dom": "^19.2.2",
     "@types/styled-components": "^5.1.35",
     "@vitejs/plugin-react": "^5.0.4",
     "concurrently": "^9.2.1",
