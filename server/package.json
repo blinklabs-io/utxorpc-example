@@ -19,7 +19,7 @@
     "@types/node": "^25.0.2",
     "nodemon": "^3.1.7",
     "ts-node": "^10.9.2",
-    "typescript": "^5.6.3"
+    "typescript": "^6.0.2"
   },
   "dependencies": {
     "@emurgo/cip14-js": "^3.0.1",
